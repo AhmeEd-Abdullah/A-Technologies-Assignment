@@ -1,0 +1,15 @@
+nav {
+  padding: 10px 30px;
+  background-color: #f3f4f4;
+  .translation {
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+    cursor: pointer;
+    span {
+      color: #104f68;
+      font-size: 17px;
+      font-weight: 500;
+    }
+  }
+}

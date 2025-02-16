@@ -1,0 +1,195 @@
+@use "../../../../../assets/scss/mixins" as *;
+@use "../../../../../assets/scss/variables" as *;
+@use "../../../../../assets/scss/placeholders";
+
+%align-center {
+  display: flex;
+  align-items: center;
+}
+
+section {
+  @include border-radius(6px);
+  padding: 12px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #ffffff;
+  border: 1px solid #ecf0f5;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease-out forwards;
+  -webkit-animation: fadeInUp 1s ease-out forwards;
+  .table-container {
+    margin-bottom: 12px;
+    max-width: 100%;
+    overflow: auto;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    table {
+      min-width: 1100px;
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0 8px;
+      tr {
+        th,
+        td {
+          text-align: start;
+          padding: 12px;
+        }
+      }
+      thead {
+        tr {
+          background-color: #f4f5f7;
+          th {
+            color: $secondary-color;
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 15.55px;
+            &:first-child {
+              border-start-start-radius: 6px;
+              border-end-start-radius: 6px;
+            }
+            &:last-child {
+              border-start-end-radius: 6px;
+              border-end-end-radius: 6px;
+            }
+          }
+        }
+      }
+      tbody {
+        tr {
+          td {
+            font-size: 14px;
+            line-height: 16.74px;
+            border-top: 1px solid #ecf0f5;
+            border-bottom: 1px solid #ecf0f5;
+            width: 160px;
+            &:first-child {
+              > div {
+                display: inline-block;
+                .flex-wraper {
+                  @extend %align-center;
+                  column-gap: 6px;
+                  .text-wraper {
+                    p {
+                      max-width: 135px;
+                    }
+                  }
+                }
+              }
+              border-inline-start: 1px solid #ecf0f5;
+              border-start-start-radius: 6px;
+              border-end-start-radius: 6px;
+            }
+            &:last-child {
+              border-inline-end: 1px solid #ecf0f5;
+              border-start-end-radius: 6px;
+              border-end-end-radius: 6px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .pagination-wraper {
+    @extend %flex-between;
+    @media (max-width: 768px) {
+      flex-direction: column;
+      row-gap: 16px;
+    }
+    .pagination-details {
+      @extend %align-center;
+      column-gap: 8px;
+      color: #333333;
+      span {
+        line-height: 13.2px;
+        font: {
+          weight: 500;
+          size: 11px;
+        }
+        &.number {
+          line-height: 15px;
+          font: {
+            weight: 500;
+            size: 10px;
+          }
+          &.all {
+            position: relative;
+            top: 2px;
+          }
+        }
+      }
+      .dummy-dropdown {
+        @extend %flex-center;
+        column-gap: 8px;
+        width: 42px;
+        height: 30px;
+        border: 1px solid #efefef;
+      }
+      .number {
+        font-size: 10px;
+        line-height: 15px;
+      }
+    }
+    .pagination-actions {
+      @extend %align-center;
+      column-gap: 12px;
+      span {
+        color: $secondary-color;
+        cursor: pointer;
+        transition: all 0.3s;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        -ms-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        &:not(.active) {
+          opacity: 0.6;
+        }
+        &:hover {
+          color: white;
+          background-color: #3e97ff;
+        }
+      }
+      .pagination-numbers {
+        @extend %align-center;
+        flex-direction: row-reverse;
+        column-gap: 4px;
+        button {
+          @include border-radius(4px);
+          @extend %flex-center;
+          padding: 3px 9px;
+          width: 27px;
+          height: 27px;
+          border: none;
+          outline: none;
+          font-size: 14px;
+          color: #7e8299;
+          cursor: pointer;
+          transition: background-color 0.3s;
+          -webkit-transition: background-color 0.3s;
+          -moz-transition: background-color 0.3s;
+          -ms-transition: background-color 0.3s;
+          -o-transition: background-color 0.3s;
+          &.active,
+          &:hover {
+            color: #ffffff;
+            background-color: #3e97ff;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

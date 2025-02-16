@@ -1,0 +1,26 @@
+<footer>
+    <section class="content-wraper">
+
+        <!-- Creator's Details -->
+        <article class="created-by">
+            <div class="img-container">
+                <img src="../../../../../assets/images/creator-img.svg" alt="Creator Picture">
+            </div>
+            <div class="info">
+                <h3>تم الأإنشاء بواسطة</h3>
+                <span>عبدالرحيم إسماعيل ناصف</span>
+            </div>
+        </article>
+
+        <!-- Date and Time Details -->
+        <article class="creation-date">
+            <h3>تاريخ الإنشاء</h3>
+            <div class="date-wraper number">
+                <span>{{currentDate | date: 'dd/MM/yyyy'}}</span>
+                <span></span>
+                <span>{{currentDate | date: 'hh:mm a' : '+2' : 'ar-EG'}}</span>
+            </div>
+        </article>
+
+    </section>
+</footer>

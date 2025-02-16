@@ -1,0 +1,51 @@
+@use "../../../assets/scss/placeholders";
+@use "../../../assets/scss/mixins" as *;
+
+header {
+  @extend %flex-between;
+  @include border-radius(8px 8px 0 0);
+  padding: 9px 16px;
+  border-bottom: 1px solid #e4e4e4;
+  .display-num {
+    @extend %flex-center;
+    column-gap: 8px;
+    .hash-container {
+      @extend %flex-center;
+      @include border-radius(4px);
+      width: 22px;
+      height: 22px;
+      background-color: #3e97ff1a;
+    }
+    span {
+      font: {
+        size: 14px;
+        weight: 500;
+        line-height: 21px;
+      }
+    }
+  }
+  .close-box {
+    @extend %flex-center;
+    @include border-radius(5.47px);
+    width: 20px;
+    height: 20px;
+    background-color: #f4f4f4;
+    cursor: url("../../../assets/images/hand-cursor.svg"), pointer;
+    &:hover .close-icon {
+      filter: brightness(0) saturate(100%) invert(39%) sepia(99%)
+        saturate(1743%) hue-rotate(331deg) brightness(99%) contrast(101%);
+    }
+    .close-icon {
+      transition: filter 0.3s ease;
+      -webkit-transition: filter 0.3s ease;
+      -moz-transition: filter 0.3s ease;
+      -ms-transition: filter 0.3s ease;
+      -o-transition: filter 0.3s ease;
+    }
+  }
+}
+
+main {
+  padding: 10px;
+  background-color: #f8f8f8;
+}
